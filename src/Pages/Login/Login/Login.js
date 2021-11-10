@@ -1,8 +1,18 @@
 import { Button, Container, Grid, TextField, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import login from '../../../images/login.svg'
 
 const Login = () => {
+
+    const [loginData, setLoginData] = useState({});
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+    }
 
     const handleLoginSubmit = e => {
         alert('login successfully')
@@ -23,7 +33,7 @@ const Login = () => {
                             id="standard-basic"
                             label="Your Email"
                             name="email"
-                            // onChange={handleOnChange}
+                            onChange={handleOnChange}
                             variant="standard" />
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -31,7 +41,7 @@ const Login = () => {
                             label="Your Password"
                             type="password"
                             name="password"
-                            // onChange={handleOnChange}
+                            onChange={handleOnChange}
                             variant="standard" />
 
                         <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
