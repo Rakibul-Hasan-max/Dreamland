@@ -1,9 +1,23 @@
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from './Pages/Home/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>DreamLand</h1>
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          {/* <Route path="/">
+            
+          </Route> */}
+        </Switch>
+    </Router>
     </div>
   );
 }
