@@ -14,7 +14,7 @@ const Navigation = () => {
                     <Toolbar>
                     <Link to="/"><img style={{width: 250, height: 100, marginLeft: "150px"}} src={logo} alt="" /></Link>
                     <Box style={{marginLeft: "850px"}} >
-                        <Button style={{color: '#1A354A'}} color="inherit">Login</Button>
+                        <Link to="/login" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Login</Button></Link>
                     </Box>
                     </Toolbar>
                 </AppBar>
