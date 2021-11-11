@@ -20,7 +20,7 @@ const Navigation = () => {
                         <Box style={{marginLeft: "850px"}} >
                             {
                                 user?.email ?
-                                <Button onClick={logout} color="inherit">Logout</Button>
+                                <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
                                 :
                                 <Link to="/login" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Login</Button></Link>
                             }
