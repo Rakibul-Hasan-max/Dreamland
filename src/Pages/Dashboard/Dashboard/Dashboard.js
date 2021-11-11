@@ -108,10 +108,7 @@ function Dashboard(props) {
       >
         <Toolbar />
         <Typography paragraph>
-          Content here
-        </Typography>
-        <Typography paragraph>
-          Content here again
+          Payment system coming soon...
         </Typography>
       </Box>
     </Box>

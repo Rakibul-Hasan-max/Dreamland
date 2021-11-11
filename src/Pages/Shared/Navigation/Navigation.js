@@ -16,7 +16,7 @@ const Navigation = () => {
             <Box  sx={{ flexGrow: 1 }}>
                 <AppBar position="static" style={{backgroundColor: 'white'}}>
                     <Toolbar>
-                        <Link to="/"><img style={{width: 250, height: 100, marginLeft: "150px"}} src={logo} alt="" /></Link>
+                        <Link to="/"><img style={{width: 250, height: 100, marginLeft: "80px"}} src={logo} alt="" /></Link>
                         <Box style={{marginLeft: "650px"}} >
                             <Link to="/properties" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Properties</Button></Link>
                             {
