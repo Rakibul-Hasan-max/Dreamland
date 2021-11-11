@@ -7,6 +7,8 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Properties from './Pages/Properties/Properties/Properties';
+import Purchase from './Pages/Properties/Purchase/Purchase';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -23,6 +25,12 @@ function App() {
             <Route path="/properties">
               <Properties></Properties>
             </Route>
+            <PrivateRoute path="/purchase">
+              <Purchase></Purchase>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>

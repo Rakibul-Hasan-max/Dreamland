@@ -17,14 +17,20 @@ const Navigation = () => {
                 <AppBar position="static" style={{backgroundColor: 'white'}}>
                     <Toolbar>
                         <Link to="/"><img style={{width: 250, height: 100, marginLeft: "150px"}} src={logo} alt="" /></Link>
-                        <Box style={{marginLeft: "750px"}} >
+                        <Box style={{marginLeft: "650px"}} >
                             <Link to="/properties" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Properties</Button></Link>
+                            {
+                                user?.email ?
+                                <Link to="/dashboard" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Dashboard</Button></Link>
+                                :
+                                <Link to="/login" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Login</Button></Link>
+                            }
                             <span style={{color: "black"}}>{user.displayName}</span>
                             {
                                 user?.email ?
                                 <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
                                 :
-                                <Link to="/login" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Login</Button></Link>
+                                <Link to="/register" style={{color: '#1A354A', textDecoration: 'none'}} ><Button color="inherit">Register</Button></Link>
                             }
                         </Box>
                     </Toolbar>
