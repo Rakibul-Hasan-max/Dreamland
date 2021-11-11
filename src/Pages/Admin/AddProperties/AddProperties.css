@@ -1,0 +1,19 @@
+.form-style {
+    background-color: aliceblue;
+    padding-top: 150px;
+    padding-bottom: 300px;
+}
+
+.form-style form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-style form input,
+textarea {
+    width: 30%;
+    margin-top: 10px;
+}
