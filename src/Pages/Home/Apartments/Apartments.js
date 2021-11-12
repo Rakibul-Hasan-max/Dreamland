@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import { Container, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import Apartment from '../Apartment/Apartment';
 
 const Apartments = () => {
@@ -22,12 +22,14 @@ const Apartments = () => {
                 <Typography style={{color: 'gray', marginBottom: '50px'}} variant="body1" gutterBottom>
                     Our distinctive buildings fill the skyline and street scapes of the city
                 </Typography>
-                    {
-                        apartments.slice(0, 6).map(apartment => <Apartment
-                            key={apartment._id}
-                            apartment={apartment}
-                        ></Apartment>)
-                    }
+                    <Grid>
+                        {
+                            apartments.slice(0, 6).map(apartment => <Apartment
+                                key={apartment._id}
+                                apartment={apartment}
+                            ></Apartment>)
+                        }
+                    </Grid>
             </Box>
         </Container>
     );

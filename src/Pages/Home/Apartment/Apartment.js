@@ -1,18 +1,21 @@
+import { Box, Button, Container } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Apartment = ({ apartment }) => {
     const { _id, name, description, price, img } = apartment;
     return (
-        <div className="service pb-3">
-            <img src={img} alt="" />
-            <h3 className="mt-3">{name}</h3>
-            <h3 className="mt-3">{price}</h3>
-            <p className="px-3">{description}</p>
-            <Link to={`/purchase/${_id}`}>
-                <button className="btn btn-warning">Book Now</button>
-            </Link>
-        </div>
+        <Container>
+            <Box style={{backgroundColor:'aliceblue', marginBottom: '30px', padding: '30px'}}>
+                <img src={img} alt="" />
+                <h2>{name}</h2>
+                <p>{description}</p>
+                <h3>$ {price}</h3>
+                <Link to={`/purchase/${_id}`} style={{textDecoration: 'none'}}>
+                    <Button variant="contained">Purchase</Button>
+                </Link>
+            </Box>
+        </Container>
     );
 };
 
