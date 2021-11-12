@@ -23,7 +23,7 @@ const Apartments = () => {
                     Our distinctive buildings fill the skyline and street scapes of the city
                 </Typography>
                     {
-                        apartments.map(apartment => <Apartment
+                        apartments.slice(0, 6).map(apartment => <Apartment
                             key={apartment._id}
                             apartment={apartment}
                         ></Apartment>)
