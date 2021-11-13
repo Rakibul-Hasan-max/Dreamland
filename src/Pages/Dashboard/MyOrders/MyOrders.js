@@ -15,7 +15,7 @@ const MyOrders = () => {
     const [order, setOrder] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/purchase?email=${user.email}`
+        const url = `https://serene-badlands-78729.herokuapp.com/purchase?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data));

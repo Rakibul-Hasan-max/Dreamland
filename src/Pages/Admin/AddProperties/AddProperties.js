@@ -8,7 +8,7 @@ const AddProperties = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/properties', data)
+        axios.post('https://serene-badlands-78729.herokuapp.com/properties', data)
             .then(res => {
                 if(res.data.insertedId){
                     alert('added successfully');

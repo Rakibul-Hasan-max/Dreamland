@@ -14,7 +14,7 @@ const Purchase = () => {
     
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/purchase', data)
+        axios.post('https://serene-badlands-78729.herokuapp.com/purchase', data)
             .then(res => {
                 if(res.data.insertedId){
                     alert('added successfully');
