@@ -33,7 +33,7 @@ const Purchase = () => {
                     {errors.email && <span className="error">This field is required</span>}
                     <input placeholder="Phone number" defaultValue="" {...register("phone")} />
                     <input placeholder="Address" defaultValue="" {...register("address")} />
-                    <input placeholder="Zip code" defaultValue="" {...register("zip code")} />
+                    <input placeholder="Zip code" defaultValue="" {...register("zipCode")} />
                     <input className="submit" type="submit" />
                 </form>
             </Container>
