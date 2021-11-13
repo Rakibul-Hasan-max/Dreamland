@@ -33,6 +33,7 @@ function Dashboard(props) {
     <div>
       <Link to="/"><img style={{width: 250, height: 100, padding: '0 10px', marginBottom: 0}} src={logo} alt="" /></Link>
       <Divider />
+      <Link style={{textDecoration: 'none'}} to="/myOrders">My Orders</Link>
       <List>
         {['Payment', 'My Orders', 'Review', 'Logout'].map((text, index) => (
           <ListItem button key={text}>

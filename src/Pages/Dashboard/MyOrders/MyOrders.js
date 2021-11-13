@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Box } from '@mui/material';
+import Dashboard from '../Dashboard/Dashboard';
 
 const MyOrders = () => {
 
@@ -23,6 +24,7 @@ const MyOrders = () => {
 
     return (
         <Box>
+            <Dashboard></Dashboard>
             <h2>My Booking: {order.length}</h2>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
