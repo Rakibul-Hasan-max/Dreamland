@@ -61,17 +61,6 @@ function Dashboard(props) {
         <Link style={{textDecoration: 'none'}} to={`${url}/manageProducts`}>Manage Products</Link> <br />
         </Box>}
       <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
-      
-      <List>
-        {['Payment', 'My Orders', 'Review', 'Logout'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
 
