@@ -28,6 +28,9 @@ import Payment from '../Payment/Payment';
 import MyOrders from '../MyOrders/MyOrders';
 import Review from '../Review/Review';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddProperties from '../../Admin/AddProperties/AddProperties';
+import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const drawerWidth = 240;
 
@@ -53,6 +56,9 @@ function Dashboard(props) {
       <Link style={{textDecoration: 'none'}} to={`${url}/review`}>Review</Link> <br />
       {admin && <Box>
         <Link style={{textDecoration: 'none'}} to={`${url}/makeAdmin`}>Make Admin</Link> <br />
+        <Link style={{textDecoration: 'none'}} to={`${url}/addProperties`}>Add Properties</Link> <br />
+        <Link style={{textDecoration: 'none'}} to={`${url}/manageAllOrders`}>Manage All Orders</Link> <br />
+        <Link style={{textDecoration: 'none'}} to={`${url}/manageProducts`}>Manage Products</Link> <br />
         </Box>}
       <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
       
@@ -148,9 +154,15 @@ function Dashboard(props) {
           <Route path={`${path}/makeAdmin`}>
               <MakeAdmin></MakeAdmin>
           </Route>
-          {/* <AdminRoute path={`${path}/addDoctor`}>
-              <AddDoctor></AddDoctor>
-          </AdminRoute> */}
+          <Route path={`${path}/addProperties`}>
+              <AddProperties></AddProperties>
+          </Route>
+          <Route path={`${path}/manageAllOrders`}>
+              <ManageAllOrders></ManageAllOrders>
+          </Route>
+          <Route path={`${path}/manageProducts`}>
+              <ManageProducts></ManageProducts>
+          </Route>
         </Switch>
       </Box>
     </Box>
