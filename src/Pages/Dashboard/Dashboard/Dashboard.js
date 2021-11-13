@@ -15,17 +15,26 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MyOrders from '../MyOrders/MyOrders';
-import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png'
 import { Button } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
+import {
+    Switch,
+    Route,
+    Link,
+    useRouteMatch
+} from "react-router-dom";
+import Payment from '../Payment/Payment';
+import MyOrders from '../MyOrders/MyOrders';
+import Review from '../Review/Review';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  let { path, url } = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -37,9 +46,9 @@ function Dashboard(props) {
       <Link to="/"><img style={{width: 250, height: 100, padding: '0 10px', marginBottom: 0}} src={logo} alt="" /></Link>
       <Divider />
       <Link style={{textDecoration: 'none'}} to="/purchase">Purchase</Link> <br />
-      <Link style={{textDecoration: 'none'}} to="/myOrders">My Orders</Link> <br />
-      <Link style={{textDecoration: 'none'}} to="/payment">Payment</Link> <br />
-      <Link style={{textDecoration: 'none'}} to="/review">Review</Link>  <br />
+      <Link style={{textDecoration: 'none'}} to={`${url}/myOrders`}>My Orders</Link> <br />
+      <Link style={{textDecoration: 'none'}} to={`${url}/payment`}>Payment</Link> <br />
+      <Link style={{textDecoration: 'none'}} to={`${url}/review`}>Review</Link> <br />
       <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
       
       <List>
@@ -118,12 +127,23 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Payment system coming soon...
-        </Typography>
-        <Box>
-          <MyOrders></MyOrders>
-        </Box>
+        <Switch>
+          <Route exact path={path}>
+              <Payment></Payment>
+          </Route>
+          <Route path={`${path}/payment`}>
+              <Payment></Payment>
+          </Route>
+          <Route path={`${path}/myOrders`}>
+              <MyOrders></MyOrders>
+          </Route>
+          <Route path={`${path}/review`}>
+              <Review></Review>
+          </Route>
+          {/* <AdminRoute path={`${path}/addDoctor`}>
+              <AddDoctor></AddDoctor>
+          </AdminRoute> */}
+        </Switch>
       </Box>
     </Box>
   );
