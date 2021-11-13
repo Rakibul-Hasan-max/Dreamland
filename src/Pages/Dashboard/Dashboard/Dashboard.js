@@ -16,6 +16,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MyOrders from '../MyOrders/MyOrders';
+import { Link } from 'react-router-dom';
+import logo from '../../../images/logo.png'
 
 const drawerWidth = 240;
 
@@ -29,7 +31,7 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <Toolbar />
+      <Link to="/"><img style={{width: 250, height: 100, padding: '0 10px', marginBottom: 0}} src={logo} alt="" /></Link>
       <Divider />
       <List>
         {['Payment', 'My Orders', 'Review', 'Logout'].map((text, index) => (
