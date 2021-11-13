@@ -27,6 +27,7 @@ import {
 import Payment from '../Payment/Payment';
 import MyOrders from '../MyOrders/MyOrders';
 import Review from '../Review/Review';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const drawerWidth = 240;
 
@@ -49,6 +50,7 @@ function Dashboard(props) {
       <Link style={{textDecoration: 'none'}} to={`${url}/myOrders`}>My Orders</Link> <br />
       <Link style={{textDecoration: 'none'}} to={`${url}/payment`}>Payment</Link> <br />
       <Link style={{textDecoration: 'none'}} to={`${url}/review`}>Review</Link> <br />
+      <Link style={{textDecoration: 'none'}} to={`${url}/makeAdmin`}>Make Admin</Link> <br />
       <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
       
       <List>
@@ -139,6 +141,9 @@ function Dashboard(props) {
           </Route>
           <Route path={`${path}/review`}>
               <Review></Review>
+          </Route>
+          <Route path={`${path}/makeAdmin`}>
+              <MakeAdmin></MakeAdmin>
           </Route>
           {/* <AdminRoute path={`${path}/addDoctor`}>
               <AddDoctor></AddDoctor>
