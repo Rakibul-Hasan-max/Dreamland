@@ -11,6 +11,7 @@ import Purchase from './Pages/Properties/Purchase/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddProperties from './Pages/Admin/AddProperties/AddProperties';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/payment">
+              <Payment></Payment>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>

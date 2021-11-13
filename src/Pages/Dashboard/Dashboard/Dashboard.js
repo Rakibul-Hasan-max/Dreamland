@@ -18,6 +18,8 @@ import Typography from '@mui/material/Typography';
 import MyOrders from '../MyOrders/MyOrders';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logo.png'
+import { Button } from '@mui/material';
+import useAuth from '../../../hooks/useAuth';
 
 const drawerWidth = 240;
 
@@ -28,12 +30,18 @@ function Dashboard(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const { logout } = useAuth();
 
   const drawer = (
     <div>
       <Link to="/"><img style={{width: 250, height: 100, padding: '0 10px', marginBottom: 0}} src={logo} alt="" /></Link>
       <Divider />
-      <Link style={{textDecoration: 'none'}} to="/myOrders">My Orders</Link>
+      <Link style={{textDecoration: 'none'}} to="/purchase">Purchase</Link> <br />
+      <Link style={{textDecoration: 'none'}} to="/myOrders">My Orders</Link> <br />
+      <Link style={{textDecoration: 'none'}} to="/payment">Payment</Link> <br />
+      <Link style={{textDecoration: 'none'}} to="/review">Review</Link>  <br />
+      <Button style={{backgroundColor: '#1A354A', color: 'white'}} onClick={logout} color="inherit">Logout</Button>
+      
       <List>
         {['Payment', 'My Orders', 'Review', 'Logout'].map((text, index) => (
           <ListItem button key={text}>
