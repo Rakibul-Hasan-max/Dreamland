@@ -15,6 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import MyOrders from '../MyOrders/MyOrders';
 
 const drawerWidth = 240;
 
@@ -75,14 +76,13 @@ function Dashboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -110,6 +110,9 @@ function Dashboard(props) {
         <Typography paragraph>
           Payment system coming soon...
         </Typography>
+        <Box>
+          <MyOrders></MyOrders>
+        </Box>
       </Box>
     </Box>
   );
